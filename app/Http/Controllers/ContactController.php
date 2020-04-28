@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function index(){
-       // $a=1;
-       // $contactس = Contact::orderBy('id')->get();
+       // $contacts = Contact::orderBy('id')->get();
 
        $contacts = Contact::all();
         return view('contact.index',compact('contacts'));
@@ -28,7 +27,6 @@ class ContactController extends Controller
         $contact->email=$request->useremail;
         $contact->phone=$request->userphone;
         $contact->save();
-       //  $a=a+1;
         return redirect()->back();
     }
     public function edit(Contact $contact){
