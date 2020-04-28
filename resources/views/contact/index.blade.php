@@ -1,5 +1,8 @@
 @extends('Layouts.app')
 @section('content')
+@php
+$counter = 0
+@endphp
 <div class="container">
         <h1>CRUD app</h1>
         <div><i class="fa fa-fw fa-plus-circle"></i>
@@ -20,8 +23,11 @@
                 </thead>
                 <tbody>
                    @foreach($contacts  as $contact)
+                      @php
+                      $counter += 1
+                       @endphp
                       <tr>
-                        <td>{{$contact->id}}</td>
+                        <td>{{$counter}}</td>
                         <td>{{$contact->name}}</td>
                         <td>{{$contact->email}}</td>
                         <td>{{$contact->phone}}</td>

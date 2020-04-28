@@ -1,5 +1,6 @@
 @extends('Layouts.app')
 @section('content')
+
 <div class="container">
     <h1>CRUD app</h1>
     @if(isset($contact))
